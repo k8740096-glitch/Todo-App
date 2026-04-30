@@ -14,9 +14,9 @@ mongoose.connect(process.env.MONGO_URI)
 .catch(err => console.log(err));
 app.use("/api/todos", require("./routes/todoroutes"));
 
-app.use(express.static(path.join(__dirname, "client/dist")));
+app.use(express.static(path.join(__dirname, "client")));
 app.use((req, res)=> {
-    res.sendFile(path.join(__dirname, "client/dist/index.html"));
+    res.sendFile(path.join(__dirname, "client/index.html"));
 });
 
 app.listen(PORT, () => {console.log(`Server running on port"${PORT}`);
