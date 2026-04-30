@@ -1,0 +1,66 @@
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(135deg, #dab2ff, #f6cfff);
+}
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.todo-box{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  width:350px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+  text-align:center;
+}
+h2{
+  margin-bottom:20px;
+  color:#333;
+}
+.input-section{
+display:flex;
+gap:10px;
+}
+.input-section input{
+  flex:1;
+  padding:10px;
+  border-radius:8px;
+  background:#6a7282;
+  border:1px solid #ccc;
+  outline:none;
+}
+.input-section button{
+  padding:10px 15px;
+  border:none;
+  background:#2a5298;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.inpput-section button:hover{
+  background:#1e3c72;
+}
+ul{
+  list-style:none;
+  padding:0;
+  margin-top:20px;
+}
+li{
+  display:flex;
+  justify-content:space-between;
+  background:#f4f4f4;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:8px;
+}
+li button{
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  font-size:16px;
+}
