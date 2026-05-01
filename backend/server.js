@@ -17,10 +17,11 @@ mongoose.connect(process.env.MONGO_URI)
 app.use("/api/todos", require("./routes/todoroutes"));
 
 //server static files
-app.use(express.static(path.join(__dirname, "client")));
+const   __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "dist")));
 
 app.get("*",(req, res)=> {
-        res.sendFile(path.join(__dirname, "client/index.html"));
+        res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
 app.listen(PORT, () => {console.log(`Server running on port"${PORT}`);
