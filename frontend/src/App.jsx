@@ -5,7 +5,7 @@ function App() {
   const [text, setText] = useState("");
 
   const fetchTodos = async () => {
-    const res = await fetch("https://todo-app-lnf1.onrender.com/api/todos");
+    const res = await fetch("/api/todos");
     const data = await res.json();
     setTodos(data);
   };
@@ -16,7 +16,7 @@ function App() {
   const addTodo = async () => {
     if(!text) return;
     try{
-    const res = await fetch("https://todo-app-lnf1.onrender.com/api/todos",{
+    const res = await fetch("/api/todos",{
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({text}),
@@ -32,7 +32,7 @@ function App() {
 
   const toggleTodo = async (id, completed) => {
     try{
-    await fetch(`https://todo-app-lnf1.onrender.com/api/todos/${id}`,{
+    await fetch(`/api/todos/${id}`,{
       method: "PUT",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({completed: !completed}),
@@ -45,7 +45,7 @@ function App() {
 
   const deleteTodo = async (id) => {
     try{
-    await fetch(`https://todo-app-lnf1.onrender.com/sapi/todos/${id}`,{
+    await fetch(`/api/todos/${id}`,{
       method: "DELETE",
     });
     fetchTodos();
