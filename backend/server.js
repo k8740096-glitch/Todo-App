@@ -19,8 +19,8 @@ app.use("/api/todos", require("./routes/todoroutes"));
 //server static files
 app.use(express.static(path.join(__dirname, "client")));
 
-app.get("/*" ,(req, res)=> {
-    res.sendFile(path.join(__dirname, "client/index.html"));
+app.get("*",(req, res)=> {
+        res.sendFile(path.join(__dirname, "client/index.html"));
 });
 
 app.listen(PORT, () => {console.log(`Server running on port"${PORT}`);
