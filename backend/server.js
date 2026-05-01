@@ -12,10 +12,12 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URI)
 .then(()=> console.log("MongoDB Connected"))
 .catch(err => console.log(err));
+//server static files
+app.use(express.static(path.join(__dirname, "client")));
+//API routes
 app.use("/api/todos", require("./routes/todoroutes"));
 
-app.use(express.static(path.join(__dirname, "client")));
-app.use((req, res)=> {
+app.get("*" ,(req, res)=> {
     res.sendFile(path.join(__dirname, "client/index.html"));
 });
 
