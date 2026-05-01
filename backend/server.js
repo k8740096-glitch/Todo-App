@@ -17,7 +17,6 @@ mongoose.connect(process.env.MONGO_URI)
 app.use("/api/todos", require("./routes/todoroutes"));
 
 //server static files
-const   __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "dist")));
 
 app.get("*",(req, res)=> {
